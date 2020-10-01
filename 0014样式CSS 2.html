@@ -1,0 +1,135 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CSS</title>
+<link rel="icon" href="通用/Logo.png">
+<base target="_blank">
+<style type="text/css">
+body
+{
+	background:no-repeat gray;
+}
+p
+{
+	color:white;
+	font-size:20px;
+}
+span
+{
+	color:white;
+	border-width:thick;
+	border-color:orange;
+}
+</style>
+</head>
+
+<body>
+<font style="border:10px solid orange;color:white;">
+Border？Yes！Border效果，格式：border:?px solid color;
+</font><br /><br />
+<p>
+Border第一项为边框宽度,值可为thin/thick/medium/自定义<br />
+第一项可用border-width:x (x) (x) (x);定义。<br />
+参数为一项时同时设置四边边框<br />
+参数为两项时第一项设置上下,第二项设置左右<br />
+参数为三项及以上顺序为上\右\下\左</p><br /><br />
+<p>
+Border第二项为边框样式<br />
+第二项可用border-style:x (x) (x) (x);定义。<br />
+设置方法嘛,和border-width一致。不同值效果如下<br /></p>
+<span style="border-style:none">none(无边框) hidden(无边框)</span>
+<span style="border-style:dotted">dotted(点状边框)</span>
+<span style="border-style:dashed">dashed(虚线边框)</span>
+<span style="border-style:solid">solid(实现边框)</span>
+<span style="border-style:double">double(双线边框)</span>
+<span style="border-style:groove">groove(3D凹槽边框)</span>
+<span style="border-style:ridge">ridge(3D垄状边框)</span>
+<span style="border-style:inset">inset(3Dinset边框)</span><br /><br />
+<span style="border-style:outset">outset(3Doutset边框)</span><br />
+<br /><br />
+<font style="color:white;border:medium inset orange;
+border-radius:20px;font-size:20px;">
+圆角边框使用border-radius实现，参数是圆角大小</font><br /><br />
+<p><br />使用box_shadow添加阴影,前2个参数定义位置，
+接着是模糊距离、阴影尺寸、颜色、inset(内部阴影)</p>
+<div style="background-color:orange;
+box-shadow:10px 10px 20px black inset;
+height:100px;width:1000px;"></div>
+<div style="background-color:orange;
+box-shadow:10px 10px 20px black;
+height:100px;width:1000px;"></div><br /><br />
+<p>opacity:0-1可以设置各种东西的透明度,例如这个矩形:</p>
+<div style="background-color:orange;
+box-shadow:10px 10px 20px black;opacity:0.5;
+height:100px;width:1000px;"></div><br /><br />
+<div style="position:absolute;background-color:orange;
+opacity:0.5;left:500px;top:1000px;
+height:200px;width:200px;"></div>
+<p>使用position:absolute;加上left:和top:自定义区块位置: 这句话上的矩形<br />
+absolute是对于全局(真正的坐标),而relative会是相对位置<br />
+最后是fixed,它是对于界面(窗口)定位，所以还可用right\bottom</p>
+<br /><br />
+<p style="text-align:center;color:purple;
+letter-spacing:12px;font-size:30px;"><b>
+使用letter-spacing:?px来设置字间距</b></p>
+<p style="color:aqua;opacity:0.5;padding:20px 450px 20px 450px;
+font-size:30px;"><b>
+使用padding:上 右 下 左(单位/px) 来设置内边距(文本会变成外边距？)
+？？？？？<br />
+margin设置外边距，4参，也可写margin-right等<br /></b></p>
+<font style="color:white;font-size:20px;">
+text-decoration:value为文本添加修饰:</font><br /><br />
+<div style="color:white;font-size:20;">z
+<font style="text-decoration:none;">none</font>
+<font style="text-decoration:underline;">underline</font>
+<font style="text-decoration:overline;">overline</font>
+<font style="text-decoration:line-through;">line-through</font>
+<font style="text-decoration:blink;">blink(firefox)</font>
+</div>
+<a style="text-decoration:underline;color:black;"
+href="0014/BG Picture.html">
+<p style="color:#050505">使用图片做背景</a>
+(a标签内使用color改变下划线颜色)</p><br />
+<p>background-repeat设置背景图像重复方式</p>
+<div style="background-image:url('0014/Bg3.png');
+background-repeat:repeat;width:700px;">
+<font color="lightgreen" size="20px"><b>repeat:横竖重复</b>
+</font></div><br />
+<div style="background-image:url('0014/Bg3.png');
+background-repeat:repeat-x;width:700px;">
+<font color="lightgreen" size="20px"><b>repeat-x:水平重复</b>
+</font></div><br />
+<div style="background-image:url('0014/Bg3.png');
+background-repeat:repeat-y;width:700px;">
+<font color="lightgreen" size="20px"><b>repeat-y:垂直重复</b>
+</font></div><br />
+<div style="background-image:url('0014/Bg3.png');
+background-repeat:no-repeat;width:700px;">
+<font color="lightgreen" size="20px"><b>no-repeat:无重复</b>
+</font></div><br />
+<p>background-attachment设置图像是否随页面滚动</p>
+<p>scroll(默认值、随着滚动) fixed(不滚动),<b>fixed效果-----></b>
+</p><div style="height:400px;width:400px;position:absolute;
+background-image:url('0014/Bg4.png');top:1900px;left:700px;
+background-attachment:fixed;background-position:bottom;
+box-shadow:20px 20px 20px black inset;">
+</div><p><br /><br />background-position来设置背景图像位置<br />
+有两个参数,对应x、y向,可填<br />
+单词(x:bottom/center/top,y:center/right/left)、<br />
+value%(图片的%位置)、value px<br />
+单词第二项默认center, %和 px可混用，第二项默认50%<br /></p>
+<p style="width:500px"><br />震惊！bg color和bg img可混用！
+<br />再震惊！background-单词的参数(除数字)，竟然可以写在background:里(部分)！
+<br />再再震惊！background讲顺序？！(也是部分)<br /></p><br />
+<p>听说你想拉伸背景图像自适应？？？试试background-size!!</p>
+<div style="background:url(0014/Bg5.png) no-repeat;
+background-size:cover;width:500px"><p>cover(等比放大)</p></div>
+<div style="background:url(0014/Bg5.png);
+background-size:contain;width:500px"><p>contain(拉到刚好)
+<br />但我的chrome里它只往横向等比放大</p></div>
+<div style="background:url(0014/Bg5.png);
+background-size:1cm 1pt;width:500px"><p>自己拉x px，y px</p></div>
+<p><br /><br /><br /><br /><br /><br /><br /></p><hr />
+</body>
+</html>
