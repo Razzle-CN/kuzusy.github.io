@@ -17,12 +17,15 @@
 	 	"<"+'iframe id="iframe" src="'+web+'" width=1300px height=700px'
 	  	+">"+"<"+"/iframe"+">";
 	}
-	function musicCreate()
+	function musicAdd()
 	{
+		var fdiv=document.getElementById("div_music");
 		var id=document.getElementById("music_id").value;
-		document.getElementById("div_music").innerHTML=
-		'<iframe id="music" frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id='
-			+id+'&auto=1&height=66"></iframe>';
+		var p=document.createElement('div');p.id="music";
+		p.innerHTML='<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id='
+		+id+'&auto=1&height=66"></iframe>';
+		var first=fdiv.firstChild;
+		fdiv.insertBefore(p,first);
 	}
 	function imgCreate()
 	{
@@ -63,7 +66,7 @@
 <input type="button" value="生成图片" onclick="imgCreate()" />
 <input type="button" value="消除图片" onclick="destroyDiv('img')" /><br />
 <input type="text" id="music_id" placeholder="歌曲id" style="width:100px" /><br />
-<input type="button" value="生成" onclick="musicCreate()" />
+<input type="button" value="添加" onclick="musicAdd()" /><input type="button" value="删除" onclick="destroyDiv('music')" />
 </div>
 	
 <div id="div1" style="position:absolute;top:700px;left:0px"></div>
