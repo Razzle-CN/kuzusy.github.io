@@ -6,17 +6,24 @@
   </style>
   <link target="_blank" />
   <script>
- function destroyDiv(div_name)
- {
-	 document.getElementById(div_name).remove();
- }
- function webCreate()
-{
-	var web=document.getElementById("href").value;
-  	document.getElementById("div1").innerHTML=
- 	"<"+'iframe id="iframe" src="'+web+'" width=1350px height=700px'
-  	+">"+"<"+"/iframe"+">";
- }
+ 	function destroyDiv(div_name)
+ 	{
+		 document.getElementById(div_name).remove();
+	 }
+	function webCreate()
+	{
+		var web=document.getElementById("href").value;
+	  	document.getElementById("div1").innerHTML=
+	 	"<"+'iframe id="iframe" src="'+web+'" width=1350px height=700px'
+	  	+">"+"<"+"/iframe"+">";
+	}
+	function imgCreate()
+	{
+		var src=document.getElementById("scr").value;
+		var width=document.getElementById("width").value;
+	  	document.getElementById("div_img").innerHTML=
+	 	"<"+'img id="img" src="'+src+'" width='+width+"px />";
+	}
  </script>
  </head>
 <body background="bg.jpg" style="background-color:#555555;background-size:1400px;background-repeat:no-repeat;background-attachment:fixed;color:white">
@@ -48,7 +55,9 @@
 <input type="button" value="爆破网页" onclick="destroyDiv('iframe')" /><br />
 <input type="button" value="消除链接" onclick="destroyDiv('a')" />
 <input type="button" value="消除歌单" onclick="destroyDiv('song')" />
-<input type="button" value="消除按钮" onclick="destroyDiv('button')" />
+<input type="button" value="消除按钮" onclick="destroyDiv('button')" /><br />
+<input type="text" id="src" /><input type="text" id="width" /><br />
+<input type="button" value="生成图片" onclick="imgCreate()" />
 </div>
 <div id="div1" style="position:absolute;top:650px;left:0px"></div>
 
@@ -57,5 +66,6 @@
 <iframe style="position:absolute;top:0px;left:570px" frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=450 src="//music.163.com/outchain/player?type=0&id=896868544&auto=1&height=430"></iframe>
 </div>
 
+<div id="div_img"></div>
 </body>
 </html>
