@@ -19,7 +19,7 @@
 	}
 	function imgCreate()
 	{
-		var src=document.getElementById("scr").value;
+		var src=document.getElementById("src").value;
 		var width=document.getElementById("width").value;
 	  	document.getElementById("div_img").innerHTML=
 	 	"<"+'img id="img" src="'+src+'" width='+width+"px />";
@@ -59,6 +59,7 @@
 <input type="text" id="src" placeholder="路径" style="width:100px" />
 <input type="text" id="width" placeholder="宽度" style="width:40px" /><br />
 <input type="button" value="生成图片" onclick="imgCreate()" />
+<input type="button" value="消除图片" onclick="destroyDiv(div_img)" />
 </div>
 <div id="div1" style="position:absolute;top:650px;left:0px"></div>
 
