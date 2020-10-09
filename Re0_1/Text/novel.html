@@ -4,11 +4,22 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
 <head>
-  <link href="../Styles/style.css" rel="stylesheet" type="text/css"/>
+<script>
+function jumpTo()
+{
+	var yDis=document.getElementById("yDis").value;
+	window.scrollTo(0,yDis);
+}
+</script>
+<link href="../Styles/style.css" rel="stylesheet" type="text/css"/>
 
   <title>Re:0</title>
 </head>
 <body>
+<div id="div1" style="position:fixed;left:1200px;top:0px">
+<input type="text" style="width:65px;" id="yDis"/>
+<input type="button" onclick="jumpTo()" value="Go"/>
+</div>
   <div>
 <div class="cover duokan-image-single"><img alt="" src="../Images/cover.jpg"/></div>
 <h1 class="xinyalan color1">序章 『开始的余温』</h1>
