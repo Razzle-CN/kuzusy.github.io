@@ -32,7 +32,7 @@
 	}
 	 function robotCreate()
 	{
-		var href=document.getElementById("robotID").value;
+		var robotID=document.getElementById("robotID").value;
 	  	document.getElementById("robot").innerHTML=
 	 	'<a href="https://yzf.qq.com/xv/web/static/chat/index.html?inner=1&sign=37ef9b9787210ac32144cfe91de6b434874472d5285f4a01eceab5e4f154eafaa3deecd5e74169af9f6ab0862b7570dac6038d&uid=sxz.school.zykj.org_'
 		+robotID+'&rmb=true&goodImg=contain&">'+robotID+'</a>'
@@ -82,7 +82,7 @@
 	
 <div style="position:absolute;top:0px;left:200px">
 <input type="text" id="robotID" placeholder="输入学号"  style="width:100px" />
-<input type="button" value="生成跳转链接" onclick="robotCreate" />
+<input type="button" value="生成跳转链接" onclick="robotCreate()" />
 <div id="robot"></div>
 </div>
 	
