@@ -74,6 +74,12 @@
 		var first=fdiv.firstChild;
 		fdiv.insertBefore(p,first);
 	}
+	function videoCreate()
+	{
+		var video=document.getElementById("video").value;
+	  	document.getElementById("div_video").innerHTML=
+	 	'<video controls="controls" src="'+video+'"></video>';
+	}
  </script>
  </head>
 <body background="https://i2.tiimg.com/727916/b59f7dd81a6b0a06.jpg" style="background-color:#555555;background-size:100%;background-repeat:default;background-attachment:fixed;color:white">
@@ -112,7 +118,9 @@
 <input type="text" id="music_id" placeholder="歌曲id" style="width:100px" /><br />
 <input type="button" value="添加" onclick="musicAdd()" /><input type="button" value="删除" onclick="destroyDiv('music')" /><br >
 <input type="text" id="robotID" placeholder="输入学号"  style="width:100px" /><br />
-<input type="button" value="生成机器人窗口" onclick="robotCreate()" />
+<input type="button" value="生成机器人窗口" onclick="robotCreate()" /><br />
+<input type="text" id="video" placeholder="视频地址"  style="width:100px" /><br />
+<input type="button" value="生成" onclick="videoCreate()" />
 </div>
 	
 <div id="div1" style="position:absolute;top:700px;left:0px"></div>
@@ -123,5 +131,5 @@
 </div>
 <div id="div_music"></div>
 <div id="div_img"></div>
-<div id="div_video"><video src="https://gss3.baidu.com/6LZ0ej3k1Qd3ote6lo7D0j9wehsv/tieba-smallvideo/60_0e06ae6d010f37535a2fef3f7ec8a0b1.mp4" controls="controls"></video></div>
+<div id="div_video"></div>
 </html>
