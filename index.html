@@ -30,6 +30,13 @@
 	 	"<"+'iframe id="iframe" src="'+web+'" width=1265px height=700px'
 	  	+">"+"<"+"/iframe"+">";
 	}
+	 function robotCreate()
+	{
+		var href=document.getElementById("robotID").value;
+	  	document.getElementById("robot").innerHTML=
+	 	'<a href="https://yzf.qq.com/xv/web/static/chat/index.html?inner=1&sign=37ef9b9787210ac32144cfe91de6b434874472d5285f4a01eceab5e4f154eafaa3deecd5e74169af9f6ab0862b7570dac6038d&uid=sxz.school.zykj.org_'
+		+robotID+'&rmb=true&goodImg=contain&">'+robotID+'</a>'
+	}
 	function musicAdd()
 	{
 		var fdiv=document.getElementById("div_music");
@@ -71,6 +78,12 @@
   crf</a>
  <a href="https://yzf.qq.com/xv/web/static/chat/index.html?sign=37ef9b9787210ac32144cfe91de6b434874472d5285f4a01eceab5e4f154eafaa3deecd5e74169af9f6ab0862b7570dac6038d&uid=sxz.school.zykj.org_20200510">
   zsc</a><br />
+</div>
+	
+<div style="position:absolute;left:125px">
+<input type="text" id="robotID" placeholder="输入学号"  style="width:100px" />
+<input type="buttom" value="生成跳转链接" onclick="robotCreate" />
+<div id="robot"></div>
 </div>
 	
 <div id="button">
