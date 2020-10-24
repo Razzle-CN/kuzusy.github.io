@@ -172,10 +172,6 @@
 		var kkk=document.getElementById("kkk").value;
 		window.parent.location.href=kkk;
 	}
-	function getURL()
-	{
-		document.getElementById("iframe_url").value=parent.document.getElementById("iframe").contentWindow.location.href;
-	}
  </script>
  </head>
 <body background="bg.jpg" style="background-color:#555555;background-size:100%;background-repeat:default;background-attachment:fixed;color:white">
@@ -221,8 +217,6 @@ inner=1&sign=37ef9b9787210ac32144cfe91de6b434874472d5285f4a01eceab5e4f154eafaa3d
 
 1=%E6%9C%B1%E4%BC%9F%E9%B9%8F_20200749&c2=sxz.school.zykj.org&c3=&c4=&c5=" id="kkk" placeholder="...."  style="width:100px" /><br />
 <input type="button" value="test" onclick="a()" /><br />
-<input type="text" id="iframe_url" /><br />
-<input type="button" value="获取" onclick="getURL()" />
 </div>
 	
 <div id="div1" style="position:absolute;top:700px;left:0px"></div>
