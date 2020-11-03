@@ -118,13 +118,16 @@
  	{
 		 document.getElementById(div_name).remove();
 	 }
-	function webCreate(n)
+	function webCreate()
 	{
+                var div=document.getElementById("div_iframe");
 		var websrc=document.getElementById("href").value;
 	        var iframe=document.createElement("iframe");
-		.innerHTML=
-	 	"<"+'iframe id="iframe" src="'+web+'" width=1245px height=700px'
-	  	+">"+"<"+"/iframe"+">";
+                iframe.src=websrc;
+		iframe.style.width="1245px":
+		iframe.style.height="700px";
+                iframe.id="iframe";
+                div.firstChild.insertBefore(iframe);
 	}
 	function webJump()
 	{
@@ -203,8 +206,7 @@ no-repeat left top;background-size:100px 100px"><br />
 	
 <div id="button">
 <input type="text" id="href" placeholder="输入网址"  style="width:100px" /><br />
-<input type="button" value="生成网页" onclick="webCreate(1)" />
-<input type="button" value="添加网页" onclick="webCreate(2)">
+<input type="button" value="添加网页" onclick="webCreate()" />
 <input type="button" value="跳转网页" onclick="webJump()" />
 <input type="button" value="爆破网页" onclick="destroyDiv('iframe')" /><br />
 <input type="text" id="src" placeholder="图片地址" style="width:100px" />
