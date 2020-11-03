@@ -124,8 +124,8 @@
 		var websrc=document.getElementById("href").value;
 	        var iframe=document.createElement("iframe");
                 iframe.src=websrc;
-		iframe.style.width="1200px";
-		iframe.style.height="700px";
+		iframe.style.width=document.getElementById("iframe_width");
+		iframe.style.height=document.getElementById("iframe_height");
                 iframe.id="iframe";
                 div.insertBefore(iframe,div.firstChild);
 	}
@@ -153,7 +153,7 @@
 	function imgCreate()
 	{
 		var src=document.getElementById("src").value;
-		var width=document.getElementById("width").value;
+		var width=document.getElementById("img_width").value;
 	  	var fdiv=document.getElementById("div_img");
 		var p=document.createElement('img');
 		p.className="myImg";p.id="img";
@@ -205,12 +205,14 @@ no-repeat left top;background-size:100px 100px"><br />
 </div>
 	
 <div id="button">
-<input type="text" id="href" placeholder="输入网址"  style="width:100px" /><br />
+<input type="text" id="href" placeholder="输入网址"  style="width:100px" />
+<input type="text" id="iframe_width" placeholder="网页宽" value="1235px" />
+<input type="text" id="iframe_height" placeholder="网页高" value="700px" /><br />
 <input type="button" value="添加网页" onclick="webCreate()" />
 <input type="button" value="跳转网页" onclick="webJump()" />
 <input type="button" value="爆破网页" onclick="destroyDiv('iframe')" /><br />
 <input type="text" id="src" placeholder="图片地址" style="width:100px" />
-<input type="text" id="width" placeholder="宽度" style="width:40px" /><br />
+<input type="text" id="img_width" placeholder="宽度" style="width:40px" /><br />
 <input type="button" value="生成图片" onclick="imgCreate()" />
 <input type="button" value="消除图片" onclick="destroyDiv('img')" /><br />
 <input type="text" id="music_id" placeholder="歌曲id" style="width:100px" /><br />
