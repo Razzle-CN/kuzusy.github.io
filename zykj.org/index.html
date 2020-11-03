@@ -2,12 +2,14 @@
   <style>
     .testImgClass{
       position:absolute;
+      align:center;
       width:300px;
-      animation;testAni 1s infinite;
+      animation;myanimation 1s infinite;
     }
-    @keyframes testAni{
-      from{transform: scale(0);}
-      to{transform:scale(1);}
+    @keyframes myanimation{
+      0%{transform: rotate(0deg);}
+      50%{transform: rotate(180deg);}
+      100%{transform: rotate(360deg);}
     }
   </style>
 </head>
