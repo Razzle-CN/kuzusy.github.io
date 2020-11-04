@@ -4,7 +4,7 @@
         <title>MyAnimeList</title>
 	<style>
             body{
-                cursor: url("../cur/default.cur"),pointer;
+                cursor: url("../cur/default.cur"),default;
                 background-color:skyblue;
                 background-image: url("background.jpg");
                 background-attachment: fixed;
@@ -90,9 +90,9 @@
             var main=document.getElementById("mainBody");
             var headline=document.getElementsByClassName("headline");
             cover[0].onclick=function(){
-                this.style.display="none";
+                this.remove();
                 main.style.display="block";
-                main.style.animation="showTitle 1s"
+                main.style.animation="showTitle 1s";
             }
             for(i=0;i<headline.length;i++)
             headline[i].onclick=function(){
