@@ -8,21 +8,14 @@
 	img
 	{
 		width:100%;
+		max-width:700px;
 	}
 </style>
-<script>
-function jumpTo()
-{
-	var yDis=document.getElementById("yDis").value;
-	window.scrollTo(0,yDis);
-}
-</script>
   <link href="../Styles/style.css" rel="stylesheet" type="text/css"/>
 
   <title>Re0</title>
 </head>
 <body>
-<div id="div1" style="position:fixed;left:1200px;top:0px">
 <input type="text" style="width:65px;" id="yDis"/>
 <input type="button" onclick="jumpTo()" value="Go"/>
 </div>
