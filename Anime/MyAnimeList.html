@@ -1,0 +1,109 @@
+<html>
+    <head>
+        <link rel="icon" href="icon.jpg" >
+        <style>
+            body{
+                cursor: url("cur/default.cur"),pointer;
+                background-color:skyblue;
+                background-image: url("background.jpg");
+                background-attachment: fixed;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+            }
+            .title
+            {
+                margin-top: 10%;
+                font-size:200px;
+                text-align: center;
+                animation:showTitle 3s;
+                background: url("text.jpg") 50% 50%;
+                background-size: cover;
+                -webkit-text-fill-color: transparent;
+                -webkit-background-clip: text;
+            }
+            @keyframes showTitle
+            {
+                from{transform: scale(0);}
+                to{transform: scale(1);}
+            }
+            @keyframes textAppear
+            {
+                from{transform: scale(0);}
+                to{transform: scale(1);}
+            }
+            @keyframes textDisappear
+            {
+                from{transform: scale(1);}
+                to{transform: scale(0);}
+            }
+            #mainBody
+            {
+                font-family: 楷体;
+            }
+            h1{
+                display: inline;
+                font-size:60px;
+                color:white;
+            }
+            h2{
+                display: inline;
+                font-size:45px;
+                color:white;
+            }
+            p{
+                display: inline;
+                font-size: 30px;
+                color:white;
+            }
+            .detail{
+                display: none;
+                position: relative;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="title"><i>My Anime List</i></div>
+        <div style="display: none;" id="mainBody">
+            <h1 class="headline">愿望单-WISH<br></h1>
+            <div class="detail">
+                <p><b>●摇曳百合</b><br></p>
+                <p><b>●灰色的果实</b><br></p>
+            </div><br><br>
+            <h1 class="headline">看完的-在看的</h1>
+            <div class="detail">
+                <h2 class="headline">--2020.10--</h2>
+                    <div class="detail">
+                        <p><b>●在魔王城说晚安 | 魔王城でおやすみ</b><br></p>
+                        <p><b>●无能的奈奈 | </b><br></p>
+                        <p><b>●在地下城寻求邂逅是否搞错了什么 | </b><br></p>
+                        <p><b>●我立于百万生命之上 | </b><br></p>
+                        <p><b>●总之就是非常可爱 | </b><br></p>
+                        <p><b>●魔女之旅 | </b><br></p>
+                    </div>
+
+            </div>
+        </div>
+        <script>
+            var cover=document.getElementsByClassName("title");
+            var main=document.getElementById("mainBody");
+            var headline=document.getElementsByClassName("headline");
+            cover[0].onclick=function(){
+                this.style.display="none";
+                main.style.display="block";
+                main.style.animation="showTitle 1s"
+            }
+            for(i=0;i<headline.length;i++)
+            headline[i].onclick=function(){
+                var next=this.nextElementSibling;
+                if(next.style.display=="block"){
+                    next.style.display="none";
+                }
+                else {
+                    next.style.display="block";
+                    next.style.animation="textAppear 1s";
+                }
+            }
+        </script>
+    </body>
+</html>
