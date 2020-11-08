@@ -17,3 +17,30 @@
 <img class="testImgClass" src="../Pic/3.jpg"/>
 <i>fuck</i>
 </body>
+<html>
+<head>
+<title>JsWrite</title>
+<script>
+function LoadJs()
+{
+    document.getElementById("Js").innerHTML=document.getElementById("code").value;
+}
+function Run()
+{
+    var a=document.getElementById("Runner");
+    var jsname=document.getElementById("function_name").value;
+    a.value=jsname;
+    a.onclick=jsname;
+}
+</script>
+</head>
+<body>
+<textarea style="width:1200px;height:400px"></textarea>
+<input type="button" value="UploadJs" onclick="LoadJs()" /> 
+<input type="text" id="function_name"  />
+<input type="button" value="RunIt" onclick="RunJs()" />
+<input type="button" id="Runner" value="Null" onclick="" />
+<script id="Js">
+
+</script>
+</body>
