@@ -1,16 +1,12 @@
 <html>
  <head>
- <title>OresamaNo导航</title>
+ <title>LJ导航</title>
  <style>
 	body{
 		cursor:url('cur/default.cur'),default;
 	}
 	input[type="button"]{
 		cursor:url('cur/default.cur'),default;
-                color:white;
-                background:darkgrey;
-                border:0;
-                border-radius:5px;
 	}
 	input[type="text"]{
 		cursor:url('cur/text.cur'),text;
@@ -32,83 +28,6 @@
 		font-size:20px;
 		cursor:url('cur/pointer.cur'),pointer;
 	 }
-	 a:hover{opacity: 0.9}
-	 .myImg {
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
-	}
-	
-	.myImg:hover {opacity: 0.8;box-shadow: 10px 10px 20px 1px grey}
-	
-	.modal {
-	    display: none; 
-	    position: fixed; 
-	    z-index: 1;
-	    padding-top: 100px; 
-	    left: 0;
-	    top: 0;
-	    width: 100%; 
-	    height: 100%; 
-	    overflow: auto; 
-	    background-color: rgb(0,0,0); 
-	    background-color: rgba(0,0,0,0.9); 
-	}
-	
-	.modal-content {
-	    margin: auto;
-	    display: block;
-	    width: 95%;
-	}
-	
-	#caption {
-	    margin: auto;
-	    display: block;
-	    width: 80%;
-	    max-width: 700px;
-	    text-align: center;
-	    color: #ccc;
-	    padding: 10px 0;
-	    height: 150px;
-	}
-	.modal-content, #caption {    
-    	-webkit-animation-name: zoom;
-	-webkit-animation-duration: 0.6s;
-    	animation-name: zoom;
-    	animation-duration: 0.6s;
-	}
-	@-webkit-keyframes zoom {
-	    from {-webkit-transform: scale(0)} 
-	    to {-webkit-transform: scale(1)}
-	}
-	
-	@keyframes zoom {
-	    from {transform: scale(0.1)} 
-	    to {transform: scale(1)}
-	}
-	
-	.close {
-	    position: absolute;
-	    top: 15px;
-	    right: 35px;
-	    color: #f1f1f1;
-	    font-size: 40px;
-	    font-weight: bold;
-	    transition: 0.3s;
-	}
-	
-	.close:hover,
-	.close:focus {
-	    color: #bbb;
-	    text-decoration: none;
-	    cursor: pointer;
-	}
-	
-	@media only screen and (max-width: 700px){
-	    .modal-content {
-	        width: 100%;
-	    }
-	}
   </style>
   <link target="_blank" />
   <script>
@@ -118,30 +37,91 @@
 	 }
 	function webCreate()
 	{
-                var div=document.getElementById("div_iframe");
-		var websrc=document.getElementById("href").value;
-	        var iframe=document.createElement("iframe");
-                iframe.src=websrc;
-		iframe.style.width=document.getElementById("iframe_width");
-		iframe.style.height=document.getElementById("iframe_height");
-		iframe.style.width=document.getElementById("iframe_width").value;
-		iframe.style.height=document.getElementById("iframe_height").value;
-                iframe.id="iframe";
-                div.insertBefore(iframe,div.firstChild);
+		var web=document.getElementById("href").value;
+	  	document.getElementById("div1").innerHTML=
+	 	"<"+'iframe id="iframe" src="'+web+'" width=1265px height=700px'
+	  	+">"+"<"+"/iframe"+">";
 	}
-@@ -206,8 +206,8 @@
+	function webJump()
+	{
+		var web=document.getElementById("href").value;
+		window.location.href=web;
+	}
+	 function robotCreate()
+	{
+		var robotID=document.getElementById("robotID").value;
+	  	var href='https://yzf.qq.com/xv/web/static/chat/index.html?inner=1&sign=37ef9b9787210ac32144cfe91de6b434874472d5285f4a01eceab5e4f154eafaa3deecd5e74169af9f6ab0862b7570dac6038d&uid=sxz.school.zykj.org_'+robotID;
+		document.getElementById("robot").innerHTML='<iframe id="robot_iframe" src="'+href+'" width=375px height=667px></iframe>';
+	}
+	function musicAdd()
+	{
+		var fdiv=document.getElementById("div_music");
+		var id=document.getElementById("music_id").value;
+		var p=document.createElement('div');p.id="music";
+		p.innerHTML='<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id='
+		+id+'&height=66"></iframe>';
+		var first=fdiv.firstChild;
+		fdiv.insertBefore(p,first);
+	}
+	function imgCreate()
+	{
+		var src=document.getElementById("src").value;
+		var width=document.getElementById("width").value;
+	  	var fdiv=document.getElementById("div_img");
+		var p=document.createElement('div');p.id="img";
+		p.innerHTML=
+	 	'<img src="'+src+'" width='+width+"px />";
+		var first=fdiv.firstChild;
+		fdiv.insertBefore(p,first);
+	}
+	function videoCreate()
+	{
+		var video=document.getElementById("video").value;
+	  	document.getElementById("div_video").innerHTML=
+	 	'<video controls="controls" height="375px" src="'+video+'"></video>';
+	}
+	  function a()
+	{
+		var kkk=document.getElementById("kkk").value;
+		window.parent.location.href=kkk;
+	}
+	function getURL()
+	{
+		document.getElementById("iframe_url").value=parent.document.getElementById("iframe").contentWindow.location.href;
+	}
+ </script>
+ </head>
+<body background="bg.jpg" style="background-color:#555555;background-size:100%;background-repeat:default;background-attachment:fixed;color:white">
+ <input type="button" onclick="location=location" style="width:100px; height:100px; background:url(https://iknow-pic.cdn.bcebos.com/f9dcd100baa1cd1119b51595b112c8fcc3ce2d07) no-repeat left top;background-size:100px 100px"><br />
 
+<div id="a">
+ <a href="https://github.com/KuzuSy/kuzusy.github.io/blob/master/index.html">EDIT</a><br />
+ <a href="https://www.agefans.tv">AGEFANS</a><br />
+ <a href="https://www.baidu.com">BAIDU</a><br />
+ <a href="https://qzone.qq.com">QQ空间</a><br />
+ <a href="https://yzf.qq.com/xv/web/static/chat/index.html?inner=1&sign=37ef9b9787210ac32144cfe91de6b434874472d5285f4a01eceab5e4f154eafaa3deecd5e74169af9f6ab0862b7570dac6038d&uid=sxz.school.zykj.org_20200749&rmb=true&goodImg=contain&">
+  zwp</a>
+<a href="https://yzf.qq.com/xv/web/static/chat/index.html?inner=1&sign=37ef9b9787210ac32144cfe91de6b434874472d5285f4a01eceab5e4f154eafaa3deecd5e74169af9f6ab0862b7570dac6038d&uid=sxz.school.zykj.org_20200713&rmb=true&goodImg=contain&">
+  hj</a><br />
+ <a href="https://yzf.qq.com/xv/web/static/chat/index.html?sign=37ef9b9787210ac32144cfe91de6b434874472d5285f4a01eceab5e4f154eafaa3deecd5e74169af9f6ab0862b7570dac6038d&uid=sxz.school.zykj.org_20191101">
+  bjw</a>
+ <a href="https://yzf.qq.com/xv/web/static/chat/index.html?sign=37ef9b9787210ac32144cfe91de6b434874472d5285f4a01eceab5e4f154eafaa3deecd5e74169af9f6ab0862b7570dac6038d&uid=sxz.school.zykj.org_20200403">
+  crf</a>
+ <a href="https://yzf.qq.com/xv/web/static/chat/index.html?sign=37ef9b9787210ac32144cfe91de6b434874472d5285f4a01eceab5e4f154eafaa3deecd5e74169af9f6ab0862b7570dac6038d&uid=sxz.school.zykj.org_20200510">
+  申必壬</a><br />
+</div>
+	
+<div style="position:absolute;top:0px;left:175px">
+<div id="robot"></div>
+</div>
+	
 <div id="button">
-<input type="text" id="href" placeholder="输入网址"  style="width:100px" />
-<input type="text" id="iframe_width" placeholder="网页宽" value="1235px" />
-<input type="text" id="iframe_height" placeholder="网页高" value="700px" /><br />
-<input type="text" id="iframe_width" placeholder="网页宽" value="1235px" style="width:40px"/>
-<input type="text" id="iframe_height" placeholder="网页高" value="700px" style="width:40px"/><br />
-<input type="button" value="添加网页" onclick="webCreate()" />
+<input type="text" id="href" placeholder="输入网址"  style="width:100px" /><br />
+<input type="button" value="生成网页" onclick="webCreate()" />
 <input type="button" value="跳转网页" onclick="webJump()" />
 <input type="button" value="爆破网页" onclick="destroyDiv('iframe')" /><br />
 <input type="text" id="src" placeholder="图片地址" style="width:100px" />
-<input type="text" id="img_width" placeholder="宽度" style="width:40px" /><br />
+<input type="text" id="width" placeholder="宽度" style="width:40px" /><br />
 <input type="button" value="生成图片" onclick="imgCreate()" />
 <input type="button" value="消除图片" onclick="destroyDiv('img')" /><br />
 <input type="text" id="music_id" placeholder="歌曲id" style="width:100px" /><br />
@@ -150,33 +130,19 @@
 <input type="button" value="生成机器人窗口" onclick="robotCreate()" /><br />
 <input type="text" id="video" placeholder="视频地址"  style="width:100px" /><br />
 <input type="button" value="生成" onclick="videoCreate()" /><br />
-<input type="text" value="https://github.com/kuzusy/kuzusy.github.io/edit/master/zykj.org/index.html" id="kkk" placeholder="...."  style="width:100px" /><br />
+<input type="text" value="http://ezy-sxz.oss-cn-hangzhou.aliyuncs.com/appstore/%E4%B8%AD%E8%82%B2%E4%BA%91%E7%AC%94%E8%AE%B01.6.6.apk" id="kkk" placeholder="...."  style="width:100px" /><br />
 <input type="button" value="test" onclick="a()" /><br />
+<input type="text" id="iframe_url" /><br />
+<input type="button" value="获取" onclick="getURL()" />
 </div>
 	
-<div id="div_iframe" style="position:absolute;top:700px;left:0px"></div>
+<div id="div1" style="position:absolute;top:700px;left:0px"></div>
+
 <div id="song">
-<iframe style="position:absolute;top:0px;left:900px" frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=450 src="//music.163.com/outchain/player?
-type=0&id=625861456&auto=0&height=430"></iframe>
-<iframe style="position:absolute;top:0px;left:570px" frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=450 src="//music.163.com/outchain/player?
-type=0&id=896868544&auto=1&height=430"></iframe>
+<iframe style="position:absolute;top:0px;left:900px" frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=450 src="//music.163.com/outchain/player?type=0&id=625861456&auto=0&height=430"></iframe>
+<iframe style="position:absolute;top:0px;left:570px" frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=450 src="//music.163.com/outchain/player?type=0&id=896868544&auto=1&height=430"></iframe>
 </div>
 <div id="div_music"></div>
-<div id="div_img" style="display: flex;flex-direction: column;"></div>
-<div id="div_video"></div>
-<div id="myModal" class="modal">
-  <span class="close">×</span>
-  <img class="modal-content" id="img01">
-  <div id="caption"></div>
-</div>
-<script>
-var modal = document.getElementById('myModal');
-var img = document.getElementsByClassName('myImg');
-var modalImg = document.getElementById("img01");
-var captionText = document.getElementById("caption");
-var span = document.getElementsByClassName("close")[0];
-span.onclick = function() { 
-    modal.style.display = "none";
-}
-</script>
+<div id="div_img"></div>
+<div id="div_video" style="transform:rotate(270deg)"></div>
 </html>
