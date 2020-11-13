@@ -71,14 +71,12 @@
 	    padding: 10px 0;
 	    height: 150px;
 	}
-
 	.modal-content, #caption {    
     	-webkit-animation-name: zoom;
 	-webkit-animation-duration: 0.6s;
     	animation-name: zoom;
     	animation-duration: 0.6s;
 	}
-
 	@-webkit-keyframes zoom {
 	    from {-webkit-transform: scale(0)} 
 	    to {-webkit-transform: scale(1)}
@@ -124,25 +122,61 @@
 		var websrc=document.getElementById("href").value;
 	        var iframe=document.createElement("iframe");
                 iframe.src=websrc;
+		iframe.style.width=document.getElementById("iframe_width");
+		iframe.style.height=document.getElementById("iframe_height");
 		iframe.style.width=document.getElementById("iframe_width").value;
 		iframe.style.height=document.getElementById("iframe_height").value;
                 iframe.id="iframe";
                 div.insertBefore(iframe,div.firstChild);
 	}
-	function webJump()
-	{
-		var web=document.getElementById("href").value;
-		window.location.href=web;
-	}
-	 function robotCreate()
-	{
-		var robotID=document.getElementById("robotID").value;
-	  	var href='https://yzf.qq.com/xv/web/static/chat/index.html?inner=1&sign=37ef9b9787210ac32144cfe91de6b434874472d5285f4a01eceab5e4f154eafaa3deecd5e74169af9f6ab0862b7570dac6038d&uid=sxz.school.zykj.org_'+robotID;
-		document.getElementById("robot").innerHTML='<iframe id="robot_iframe" src="'+href+'" width=375px height=667px></iframe>';
-	}
-	function musicAdd()
-	{
-		var fdiv=document.getElementById("div_music");
-		var id=document.getElementById("music_id").value;
-		var p=document.createElement('div');p.id="music";
-		p.innerHTML='<iframe frameborder="no
+@@ -206,8 +206,8 @@
+
+<div id="button">
+<input type="text" id="href" placeholder="输入网址"  style="width:100px" />
+<input type="text" id="iframe_width" placeholder="网页宽" value="1235px" />
+<input type="text" id="iframe_height" placeholder="网页高" value="700px" /><br />
+<input type="text" id="iframe_width" placeholder="网页宽" value="1235px" style="width:40px"/>
+<input type="text" id="iframe_height" placeholder="网页高" value="700px" style="width:40px"/><br />
+<input type="button" value="添加网页" onclick="webCreate()" />
+<input type="button" value="跳转网页" onclick="webJump()" />
+<input type="button" value="爆破网页" onclick="destroyDiv('iframe')" /><br />
+<input type="text" id="src" placeholder="图片地址" style="width:100px" />
+<input type="text" id="img_width" placeholder="宽度" style="width:40px" /><br />
+<input type="button" value="生成图片" onclick="imgCreate()" />
+<input type="button" value="消除图片" onclick="destroyDiv('img')" /><br />
+<input type="text" id="music_id" placeholder="歌曲id" style="width:100px" /><br />
+<input type="button" value="添加" onclick="musicAdd()" /><input type="button" value="删除" onclick="destroyDiv('music')" /><br >
+<input type="text" id="robotID" placeholder="输入学号"  style="width:100px" /><br />
+<input type="button" value="生成机器人窗口" onclick="robotCreate()" /><br />
+<input type="text" id="video" placeholder="视频地址"  style="width:100px" /><br />
+<input type="button" value="生成" onclick="videoCreate()" /><br />
+<input type="text" value="https://github.com/kuzusy/kuzusy.github.io/edit/master/zykj.org/index.html" id="kkk" placeholder="...."  style="width:100px" /><br />
+<input type="button" value="test" onclick="a()" /><br />
+</div>
+	
+<div id="div_iframe" style="position:absolute;top:700px;left:0px"></div>
+<div id="song">
+<iframe style="position:absolute;top:0px;left:900px" frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=450 src="//music.163.com/outchain/player?
+type=0&id=625861456&auto=0&height=430"></iframe>
+<iframe style="position:absolute;top:0px;left:570px" frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=450 src="//music.163.com/outchain/player?
+type=0&id=896868544&auto=1&height=430"></iframe>
+</div>
+<div id="div_music"></div>
+<div id="div_img" style="display: flex;flex-direction: column;"></div>
+<div id="div_video"></div>
+<div id="myModal" class="modal">
+  <span class="close">×</span>
+  <img class="modal-content" id="img01">
+  <div id="caption"></div>
+</div>
+<script>
+var modal = document.getElementById('myModal');
+var img = document.getElementsByClassName('myImg');
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+var span = document.getElementsByClassName("close")[0];
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+</html>
