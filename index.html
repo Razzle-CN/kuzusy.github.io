@@ -28,6 +28,11 @@
 		font-size:20px;
 		cursor:url('cur/pointer.cur'),pointer;
 	 }
+	 iframe
+	 {
+		 height: 70%;
+		 width: 100%
+	 }
   </style>
   <link target="_blank" />
   <script>
@@ -39,7 +44,7 @@
 	{
 		var web=document.getElementById("href").value;
 	  	document.getElementById("div1").innerHTML=
-	 	"<"+'iframe id="iframe" src="'+web+'" width=1265px height=700px'
+	 	"<"+'iframe id="iframe" src="'+web+'"'
 	  	+">"+"<"+"/iframe"+">";
 	}
 	function webJump()
@@ -144,5 +149,5 @@ http://1251316161.vod2.myqcloud.com/5f6ddb64vodsh1251316161/b475d447528589081150
 </div>
 <div id="div_music"></div>
 <div id="div_img"></div>
-<div id="div_video" style="transform:rotate(270deg)"></div>
+<div id="div_video" ></div>
 </html>
