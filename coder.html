@@ -1,4 +1,5 @@
 <body>
-<textarea id=showHTML width=70% height=50%></textarea>
-<input type=button value=showCode onclick="showHTML.value=document.body.innerHTML">
+<textarea id=HTML style="width:70%;height:70%"></textarea>
+<input type=button value=showCode onclick="HTML.value=document.body.innerHTML">
+<input type=button value=addCode onclick="document.body.appendChild(HTML.value)">
 </body>
