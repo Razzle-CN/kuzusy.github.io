@@ -32,7 +32,7 @@ function randomColor()
 }
 function changeBackground()
 {
-    var img_url='animeSource/bg'+bgImgId+'.jpg';
+    var img_url='pic/bg'+bgImgId+'.jpg';
     body.style.backgroundImage='url("'+img_url+'")';
     var img=document.createElement("img");img.src=img_url;
     img.onload=function()
@@ -79,15 +79,21 @@ jQuery(document).ready(function($)
     });
     $("#Filo").hover(function(e)
     {
-        $("#charaPic").css({
-            "display":"block",
-            "animation":"picAppear 2s forwards",
-        })
+        $("#charaPic").stop(1);
+        charaPic.src="pic/Filo.png";
+        $("#charaPic").animate({opacity:1});
     },function(e)
     {
-        $("#charaPic").css({
-            "animation":"picDisappear 2s 0.3s forwards",
-        })
+        $("#charaPic").animate({opacity:0});
+    });
+    $("#Sagiri").hover(function(e)
+    {
+        $("#charaPic").stop(1);
+        if(charaPic.src!="pic/Sagiri.gif")charaPic.src="pic/Sagiri.gif";
+        $("#charaPic").animate({opacity:1});
+    },function(e)
+    {
+        $("#charaPic").animate({opacity:0});
     });
 });
 
@@ -109,7 +115,11 @@ allclose.onclick = function()
 {
     var p=document.getElementsByClassName("headline");
     for(i=0;i<p.length;i++)
-    p[i].parentElement.nextElementSibling.style.display="none";
+    p[i].parentElement.nextElementSibling.style.display="block";
 };
+timeOrder.onclick = function()
+{
+
+}
 anime_total.innerHTML="已经看完"+document.getElementsByClassName("anime").length+"部番剧";
 movie_total.innerHTML="已经看完"+document.getElementsByClassName("movie").length+"部电影/剧场版";

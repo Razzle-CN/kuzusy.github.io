@@ -5,7 +5,8 @@ body
 	background-attachment: fixed;
 	background-repeat: no-repeat;
 	color:white;
-    background-size: cover;
+	background-size: cover;
+	cursor:url("../cur/default.cur"),auto;
 }
 #cover
 {
@@ -39,6 +40,18 @@ a
 {
 	color: orange;
 	text-decoration: none;
+	cursor: url("../cur/pointer.cur"),auto;
+}
+#statistics
+{
+	position: absolute;
+	width:200px;
+	margin: 0 70%;
+}
+#charaPic
+{
+	z-index : "0";
+	opacity: 0;
 }
 .basicInf
 {
@@ -47,6 +60,10 @@ a
 .review
 {
 	color: #3599db;
+}
+.headline
+{
+	cursor: url("../cur/pointer.cur"),auto !important;
 }
 font
 {
@@ -71,14 +88,4 @@ font
 {
 	from{opacity: 1;}
 	to{opacity: 0;}
-}
-#statistics
-{
-	position: absolute;
-	width:200px;
-	margin: 0 70%;"
-}
-#charaPic
-{
-	"z-index" : "0";
 }
