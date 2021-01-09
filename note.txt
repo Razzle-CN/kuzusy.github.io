@@ -1,0 +1,5 @@
+AJAX GET
+var x=new XMLHttpRequest();
+x.open("GET","",false);
+x.send();
+$("body").append(x.respondText)
